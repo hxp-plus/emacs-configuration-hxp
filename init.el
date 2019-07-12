@@ -49,7 +49,7 @@
 (add-hook 'LaTeX-mode-hook 'turn-on-cdlatex)
 
 ;; Show line numbers
-(global-linum-mode t)
+;; (global-linum-mode t)
 
 ;; Enable yasnippet
 (yas-global-mode t)

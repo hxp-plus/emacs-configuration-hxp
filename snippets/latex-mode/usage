@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: usage
+# key: us
+# --
+\emph{Usage:} $0
