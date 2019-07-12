@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: figure_default
+# key: fi
+# --
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.7\linewidth]{figures/${1:path.pdf}}
+  \caption{$1}
+\end{figure}
+$0

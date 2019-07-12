@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: newline
+# key: n
+# --
+\newline
+$0

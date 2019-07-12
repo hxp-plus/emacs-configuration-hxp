@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: mathematica output
+# key: mo
+# --
+\hspace{\fill}\emph{Output:} $0

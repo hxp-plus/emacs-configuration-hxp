@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: noindent
+# key: ni
+# --
+\noindent $0
