@@ -18,7 +18,7 @@
  '(inhibit-startup-screen t)
  '(package-selected-packages
    (quote
-    (flymd yasnippet-snippets pdf-tools ac-math company-math auto-complete-auctex constant-theme cdlatex auctex))))
+    (markdown-mode yasnippet-snippets pdf-tools ac-math company-math auto-complete-auctex constant-theme cdlatex auctex))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
