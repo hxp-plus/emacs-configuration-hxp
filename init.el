@@ -14,11 +14,18 @@
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    (quote
-    ("ba913d12adb68e9dadf1f43e6afa8e46c4822bb96a289d5bf1204344064f041e" default)))
+    ("274fa62b00d732d093fc3f120aca1b31a6bb484492f31081c1814a858e25c72e" "ba913d12adb68e9dadf1f43e6afa8e46c4822bb96a289d5bf1204344064f041e" default)))
  '(inhibit-startup-screen t)
+ '(package-archives
+   (quote
+    (("melpa-stable" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa-stable/")
+     ("melpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
+     ("gnu" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/http://elpa.gnu.org/packages/")
+     ("Marmalade" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/marmalade/")
+     ("org" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/org/"))))
  '(package-selected-packages
    (quote
-    (markdown-mode yasnippet-snippets pdf-tools ac-math company-math auto-complete-auctex constant-theme cdlatex auctex))))
+    (dracula-theme list-packages-ext elpy python-django django-mode markdown-mode yasnippet-snippets pdf-tools ac-math company-math auto-complete-auctex constant-theme cdlatex auctex))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -59,3 +66,5 @@
    (let ((browse-url-browser-function 'browse-url-firefox))
      (browse-url url)))
  (setq flymd-browser-open-function 'my-flymd-browser-function)
+
+(load-theme 'dracula t)
