@@ -18,14 +18,12 @@
  '(inhibit-startup-screen t)
  '(package-archives
    (quote
-    (("melpa-stable" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa-stable/")
-     ("melpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
-     ("gnu" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/http://elpa.gnu.org/packages/")
-     ("Marmalade" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/marmalade/")
-     ("org" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/org/"))))
+    (("melpa-stable" . "https://stable.melpa.org/packages/")
+     ("melpa" . "https://melpa.org/packages/")
+     ("gnu" . "http://elpa.gnu.org/packages/"))))
  '(package-selected-packages
    (quote
-    (dracula-theme list-packages-ext elpy python-django django-mode markdown-mode yasnippet-snippets pdf-tools ac-math company-math auto-complete-auctex constant-theme cdlatex auctex))))
+    (gnu-elpa-keyring-update dracula-theme list-packages-ext elpy python-django django-mode markdown-mode yasnippet-snippets pdf-tools ac-math company-math auto-complete-auctex constant-theme cdlatex auctex))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -68,3 +66,13 @@
  (setq flymd-browser-open-function 'my-flymd-browser-function)
 
 (load-theme 'dracula t)
+
+(add-to-list 'load-path "~/.emacs.d/emacs-for-python/") ;; tell where to load the various files
+(require 'epy-setup)      ;; It will setup other loads, it is required!
+(require 'epy-python)     ;; If you want the python facilities [optional]
+(require 'epy-completion) ;; If you want the autocompletion settings [optional]
+(require 'epy-editing)    ;; For configurations related to editing [optional]
+(require 'epy-bindings)   ;; For my suggested keybindings [optional]
+(require 'epy-nose)       ;; For nose integration
+
+(setq package-check-signature nil)

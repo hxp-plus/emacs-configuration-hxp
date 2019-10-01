@@ -1,0 +1,26 @@
+;;; -*- coding: utf-8 -*-
+
+;; ----- ido-last-directory-list -----
+(
+ ("/home/hxp/Documents/latex/" . "week1/")
+)
+
+;; ----- ido-work-directory-list -----
+(
+ "/home/hxp/Documents/latex/week1/"
+)
+
+;; ----- ido-work-file-list -----
+(
+ 
+)
+
+;; ----- ido-dir-file-cache -----
+(
+ ("/home/hxp/Documents/" (23952 50372 790115 452000) "python-django.el/" "EmacsStudy/" "MATLAB/" "code/" "hxp-dvorak-ubuntu/" "linux-backup/" "./" "faif-2.0.pdf" "XON.for.Dash.to.DOCK/" "../" "hxp-dvorak-windows/" "hxp-dvorak/" "Wolfram Mathematica/" "6315a1c6-8a1c-41a4-9882-21045f6a7119.mp4" "wall3.tar.xz" "XON.for.Dash.to.DOCK.tar.xz")
+
+ ("/home/hxp/" (23955 27847 492000 781000) "snap/" ".gradle/" ".dbus/" ".bashrc~" "backup.sh" ".xmodstartup~" ".config/" ".themes/" "backup.sh~" "Desktop/" ".gitconfig" ".compiz/" "Music/" "Public/" "Android/" ".icons/" ".bashrc" ".pam_environment" "AndroidStudioProjects/" ".cache/" ".profile" ".ICEauthority" "./" "random_file" ".emacs.d/" ".sudo_as_admin_successful" ".bash_history" "core" "Videos/" ".wget-hsts" "ssconf.json" ".oracle_jre_usage/" ".local/" "../" "Documents/" ".gvfs/" "Downloads/" ".ssh/" ".AndroidStudio3.5/" "v2ray-clients/" ".gnupg/" ".viminfo" "v2ray/" ".Wolfram/" ".xmodstartup" "ssconf.json~" ".xinputrc" "Shadowsocks-Qt5-3.0.1-x86_64.AppImage" ".mozilla/" ".java/" ".Mathematica/" ".python_history" ".bash_logout" ".matlab/" ".android/" "Pictures/" ".pki/" ".xmodmap" "Templates/")
+)
+
+;; ----- ido-unc-hosts-cache -----
+t
