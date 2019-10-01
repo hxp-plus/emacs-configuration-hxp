@@ -65,7 +65,7 @@
      (browse-url url)))
  (setq flymd-browser-open-function 'my-flymd-browser-function)
 
-(load-theme 'dracula t)
+;; (load-theme 'dracula t)
 
 (add-to-list 'load-path "~/.emacs.d/emacs-for-python/") ;; tell where to load the various files
 (require 'epy-setup)      ;; It will setup other loads, it is required!
