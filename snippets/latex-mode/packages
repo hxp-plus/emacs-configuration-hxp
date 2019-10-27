@@ -1,0 +1,16 @@
+# -*- mode: snippet -*-
+# name: packages
+# key: packages
+# --
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{ctex}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{geometry}
+\geometry{a4paper,scale=0.8}
+\author{Xiping Hu}
+\title{$1}
+$0
