@@ -11,6 +11,14 @@
 \usepackage{float}
 \usepackage{geometry}
 \geometry{a4paper,scale=0.8}
+\usepackage{caption}
+\usepackage{subcaption}
+
 \author{Xiping Hu}
 \title{$1}
+
+\begin{document}
+\maketitle
 $0
+
+\end{document}

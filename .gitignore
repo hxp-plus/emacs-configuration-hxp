@@ -1,4 +1,7 @@
 auto-save-list/
 session*
 .emacs.desktop
-
+*~
+ac-comphist.dat
+eproject.lst
+ido.last

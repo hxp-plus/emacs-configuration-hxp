@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# name: bibtex
+# key: bibtex
+# --
+\begin{thebibliography}{99}  
+\bibitem{ref1}$1
+\bibitem{ref2}$2
+\bibitem{ref3}$3
+\bibitem{ref4}$4
+\end{thebibliography}
+$0
