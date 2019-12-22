@@ -1,2 +1,7 @@
  
 Zheng
+yasnippet
+LaTeX
+hunspell
+Xiping
+emacs

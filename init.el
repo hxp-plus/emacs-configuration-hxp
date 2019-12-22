@@ -16,6 +16,7 @@
    (quote
     ("274fa62b00d732d093fc3f120aca1b31a6bb484492f31081c1814a858e25c72e" "ba913d12adb68e9dadf1f43e6afa8e46c4822bb96a289d5bf1204344064f041e" default)))
  '(inhibit-startup-screen t)
+ '(ispell-personal-dictionary "~/.emacs.d/dict/dict.txt")
  '(package-archives
    (quote
     (("melpa-stable" . "https://stable.melpa.org/packages/")
