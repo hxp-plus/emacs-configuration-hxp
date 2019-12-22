@@ -70,6 +70,18 @@
 ;; Enable yasnippet
 (yas-global-mode t)
 
+;; Enable auto-complete
+(add-hook 'text-mode-hook 'auto-complete-mode)
+(add-hook 'prog-mode-hook 'auto-complete-mode)
+
+;; Spell Check
+(setq-default ispell-program-name "hunspell")
+(setq ispell-local-dictionary "en_US") 
+(setq ispell-local-dictionary-alist
+      '(("en_US" "[[:alpha:]]" "[^[:alpha:]]" "[']" nil ("-d" "en_US") nil utf-8)))
+(add-hook 'text-mode-hook 'flyspell-mode)
+(add-hook 'prog-mode-hook 'flyspell-prog-mode)
+
 ;; Configueing flyme preview with firefox
 (defun my-flymd-browser-function (url)
    (let ((browse-url-browser-function 'browse-url-firefox))
