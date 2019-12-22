@@ -1,16 +1,28 @@
 # Hu Xiping's emacs configuration
 
+* Supports on-the-fly spell checking with hunspell
+
+* You need to install hunspell
+
+	`sudo pacman -S hunspell hunspell-en_US`
+
 * Supports LaTeX
   
   * Preview with pdf-tools
   * Compile with auctex
   * Customizing templates by yasnippet
+  * auto-completion
 
 * Supports markdown
   
   * preview with markdown-mode
   
-  * Tutorials:
+  * Need to install markdown
+  
+	  `sudo pacman -S markdown`
+  
+  * Otherwise you can follow this tutorial:
+  
       [Edit](http://panqiincs.me/2015/06/15/edit-markdown-with-emacs/)
       [Preview](https://panqiincs.me/2015/07/31/preview-markdown-with-emacs/)
     
