@@ -1,4 +1,4 @@
-# Hu Xiping's emacs configuration
+# Xiping Hu's emacs configuration
 
 * Supports on-the-fly spell checking with hunspell
 
