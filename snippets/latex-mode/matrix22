@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# name: matrix22
+# key: m22
+# --
+\left[
+\begin{array}{ccc}
+$1 & $2 \\\\
+$3 & $4 \\\\
+\end{array}
+\right ]
+$0

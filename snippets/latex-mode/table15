@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: table15
+# key: table15
+# --
+\renewcommand\arraystretch{1.5}

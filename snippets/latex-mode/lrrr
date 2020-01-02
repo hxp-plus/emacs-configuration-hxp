@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: llr
+# key: llr
+# --
+\left\\{ $0 \right\\}

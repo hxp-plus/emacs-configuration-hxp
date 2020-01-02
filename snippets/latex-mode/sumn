@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: sumn	    
+# key: sumn
+# --
+\sum\limits_{i=1}^{n}
