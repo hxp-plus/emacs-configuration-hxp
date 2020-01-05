@@ -50,14 +50,18 @@
   (lambda ()
     (load-theme 'whiteboard)))
     
-;;Load pdff-tools
-(pdf-tools-install)
+;; Load pdf-tools
+;; (pdf-tools-install)
 
 ;; correlate
 (setq TeX-source-correlate-mode t)
 
 ;; Use pdf-tools to open PDF files
-(setq TeX-view-program-selection '((output-pdf "PDF Tools"))
+;; (setq TeX-view-program-selection '((output-pdf "PDF Tools"))
+;; 	TeX-source-correlate-start-server t)
+
+;; Use pdf-tools to open PDF files
+(setq TeX-view-program-selection '((output-pdf "Okular"))
 	TeX-source-correlate-start-server t)
 
 ;; Update PDF buffers after successful LaTeX runs
