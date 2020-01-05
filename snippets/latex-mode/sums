@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
 # name: sum_s
-# key: s
+# key: su
 # --
-\sum\limits_{$1} $0
+\sum\limits

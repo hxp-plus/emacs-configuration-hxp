@@ -6,6 +6,7 @@
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
+\usepackage{wasysym}
 \usepackage{ctex}
 \usepackage{graphicx}
 \usepackage{float}
@@ -13,8 +14,9 @@
 \geometry{a4paper,scale=0.8}
 \usepackage{caption}
 \usepackage{subcaption}
-\newcommand{\oiint}{\mathop{{\int\!\!\!\!\!\int}\mkern-21mu \bigcirc} {}}
+% \newcommand{\oiint}{\mathop{{\int\!\!\!\!\!\int}\mkern-21mu \bigcirc} {}}
 \newcommand*{\dif}{\mathop{}\!\mathrm{d}}
+\newcommand*{\md}{\mathop{}\!\mathrm{d}}
 
 % \usepackage{parskip}
 % \setlength{\parindent}{0cm}
@@ -22,6 +24,7 @@
 \usepackage{bm}
 \let\Oldmathbf\mathbf
 \renewcommand{\mathbf}[1]{\boldsymbol{\Oldmathbf{#1}}}
+\let\eqnarray\align
 
 \author{Xiping Hu}
 \title{$1}
