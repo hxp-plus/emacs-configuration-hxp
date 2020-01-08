@@ -17,6 +17,7 @@
 % \newcommand{\oiint}{\mathop{{\int\!\!\!\!\!\int}\mkern-21mu \bigcirc} {}}
 \newcommand*{\dif}{\mathop{}\!\mathrm{d}}
 \newcommand*{\md}{\mathop{}\!\mathrm{d}}
+\newcommand*{\me}{\mathrm{e}}
 
 % \usepackage{parskip}
 % \setlength{\parindent}{0cm}

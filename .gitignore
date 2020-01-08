@@ -1,5 +1,6 @@
 auto-save-list/
 session*
+games/
 .emacs.desktop
 *~
 ac-comphist.dat
