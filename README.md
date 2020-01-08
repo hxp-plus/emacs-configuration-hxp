@@ -18,9 +18,8 @@
   
   * preview-lively
   * Usage
-    * `M-x markdown-mode`
-    * `M-x httpd-start`
-	* `M-x imp-set-user-filter RET markdown-html RET`
+    * `M-x markdown-preview-like-god`
+	* `M-x httpd-start`
 	* Visit [localhost:8080/imp](localhost:8080/imp) in your browser
 
 # How to use
