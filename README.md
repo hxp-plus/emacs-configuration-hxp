@@ -6,13 +6,16 @@
 
 			`sudo pacman -S hunspell hunspell-en_US`
 
-	* Personal Dictionary is located in dict/dict.txt
-	* Supports LaTeX
+	* Personal Dictionary is located in `dict/dict.txt`
+	
+* Supports LaTeX
   
   * Preview with pdf-tools
   * Compile with auctex
   * Customizing templates by yasnippet
   * auto-completion
+  
+  
 
 * Supports markdown with impatient-mode
   
@@ -21,6 +24,9 @@
     * `M-x markdown-preview-like-god`
 	* `M-x httpd-start`
 	* Visit [localhost:8080/imp](localhost:8080/imp) in your browser
+	
+* Journal and Task with org-mode
+  * press `C-c c`
 
 # How to use
 
