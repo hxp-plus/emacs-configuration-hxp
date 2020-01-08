@@ -14,20 +14,12 @@
   * Customizing templates by yasnippet
   * auto-completion
 
-* Supports markdown
+* Supports markdown with impatient-mode
   
-  * preview with markdown-mode
-  
-  * Need to install markdown
-  
-	  `sudo pacman -S markdown`
-  
-  * Otherwise you can follow this tutorial:
-  
-      [Edit](http://panqiincs.me/2015/06/15/edit-markdown-with-emacs/)
-      [Preview](https://panqiincs.me/2015/07/31/preview-markdown-with-emacs/)
-    
-      Note that you need to install pandoc, create a file named "markdown", add "pandoc -f markdown -t html -s --mathjax --highlight-style pygments $1" into the file. Then copy it into /usr/bin/ directory and give it the execute permission(chmod +x).
+  * preview-lively
+  * Usage
+    * `M-x httpd-start`
+	* `M-x imp-set-user-filter RET markdown-html RET`
 
 # How to use
 
