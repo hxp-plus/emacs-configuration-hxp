@@ -5,3 +5,4 @@ LaTeX
 hunspell
 Xiping
 emacs
+elpy

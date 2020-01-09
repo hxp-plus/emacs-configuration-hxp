@@ -1,7 +1,4 @@
-
-
-
-;; melpa
+;; MELPA
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 (add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/"))
@@ -25,7 +22,7 @@
      ("gnu" . "http://elpa.gnu.org/packages/"))))
  '(package-selected-packages
    (quote
-    (org-link-minor-mode impatient-mode flymd auctex gnu-elpa-keyring-update dracula-theme list-packages-ext elpy python-django django-mode markdown-mode yasnippet-snippets pdf-tools ac-math company-math auto-complete-auctex constant-theme cdlatex)))
+    (py-autopep8 flycheck elpygen org-link-minor-mode impatient-mode flymd auctex gnu-elpa-keyring-update dracula-theme list-packages-ext elpy python-django django-mode markdown-mode yasnippet-snippets pdf-tools ac-math company-math auto-complete-auctex constant-theme cdlatex)))
  '(preview-gs-options
    (quote
     ("-q" "-dNOPAUSE" "-DNOPLATFONTS" "-dPrinted" "-dTextAlphaBits=4" "-dGraphicsAlphaBits=4" "-dNOSAFER")))
@@ -38,22 +35,15 @@
  '(preview-face ((t nil)))
  '(preview-reference-face ((t nil))))
 
-(add-hook 'LaTeX-mode-hook 'turn-on-cdlatex)
+;; LaTeX
 (setq TeX-auto-save t)
 (setq TeX-parse-self t)
 (setq-default TeX-engine 'xetex)
-
-;; (load-theme 'constant)
-
-(add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
-(add-hook 'LaTeX-mode-hook
-  (lambda ()
-    (load-theme 'whiteboard)))
     
-;; Load pdf-tools
+;; Load pdf-tools to view LaTeX
 (pdf-tools-install)
 
-;; correlate
+;; correlate for LaTeX
 (setq TeX-source-correlate-mode t)
 
 ;; Use pdf-tools to open PDF files
@@ -66,12 +56,6 @@
 
 ;; Use CDLaTeX
 (add-hook 'LaTeX-mode-hook 'turn-on-cdlatex)
-
-;; Show line numbers
-;; (global-linum-mode t)
-
-;; Set font
-(set-frame-font "hack" nil t)
 
 ;; Enable yasnippet
 (yas-global-mode t)
@@ -88,17 +72,9 @@
 (add-hook 'text-mode-hook 'flyspell-mode)
 (add-hook 'prog-mode-hook 'flyspell-prog-mode)
 
-;; Configueing flyme preview with firefox
-(defun my-flymd-browser-function (url)
-   (let ((browse-url-browser-function 'browse-url-firefox))
-     (browse-url url)))
- (setq flymd-browser-open-function 'my-flymd-browser-function)
-
-(load-theme 'dracula t)
-
 (setq package-check-signature nil)
 
-;; markdomn-live-perview
+;; markdown-live-preview
 (defun markdown-html (buffer)
   (princ (with-current-buffer buffer
     (format "<!DOCTYPE html><html><title>Impatient Markdown</title><xmp theme=\"united\" style=\"display:none;\"> %s  </xmp><script src=\"http://strapdownjs.com/v/0.2/strapdown.js\"></script></html>" (buffer-substring-no-properties (point-min) (point-max))))
@@ -110,7 +86,29 @@
   (setq imp-user-filter #'markdown-html)
   (cl-incf imp-last-state)
   (imp--notify-clients))
-  
+
+;; Enable elpy whenever python file is loaded 
+(add-hook 'python-mode-hook(
+    (lambda()
+      (elpy-enable))))
+
+;; Enable hideshow when python or Emacs-lisp is loaded
+(add-hook 'python-mode-hook 'hs-minor-mode)
+(add-hook 'emacs-lisp-mode-hook 'hs-minor-mode)
+
+
+;; Enable Flycheck for python
+(when (require 'flycheck nil t)
+  (setq elpy-modules (delq 'elpy-module-flymake elpy-modules))
+  (add-hook 'elpy-mode-hook 'flycheck-mode))
+
+;; Enable autopep8 for python
+(require 'py-autopep8)
+(add-hook 'elpy-mode-hook 'py-autopep8-enable-on-save)
+
+
+
+;; org-capture
 (define-key global-map "\C-cc" 'org-capture)
 
 (setq org-capture-templates
@@ -118,3 +116,13 @@
          "* TODO %?\n %i\n %a")
         ("j" "Journal" entry (file+datetree "~/.emacs.d/doc/org/journal.org")
          "* %?\nEntered on %U\n %i\n %a")))
+
+;; Load theme
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
+(add-hook 'LaTeX-mode-hook
+  (lambda ()
+    (load-theme 'whiteboard)))
+(load-theme 'dracula t)
+
+;; Set font
+(set-frame-font "hack" nil t)
