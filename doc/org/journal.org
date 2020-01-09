@@ -6,3 +6,7 @@
    Entered on [2020-01-09 Thu 00:12]
  
     [[file:~/.emacs.d/README.md::#%20Xiping%20Hu's%20Emacs%20Configuration%20File]]
+**** Started to write Emacs Lisp alone.
+   Entered on [2020-01-09 Thu 15:33]
+ 
+    [[file:~/.emacs.d/init.el::(require%20'py-autopep8)]]
