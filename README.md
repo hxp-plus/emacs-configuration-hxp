@@ -22,6 +22,7 @@
 	* `M-x httpd-start`
 	* Visit [localhost:8080/imp](http://localhost:8080/imp) in your browser
 	
+
 ### Python
 * Edit and Debug with [elpy](https://github.com/jorgenschaefer/elpy)
 * Syntax checking with flycheck
@@ -39,6 +40,7 @@
   * press `C-c c`
   * journal and todo are located in `~/.emacs.d/doc/org`
 
-# How to use* Backup your own ~/.emacs.d/
+# How to use
+* Backup your own ~/.emacs.d/
 * Put all of the files here to ~/.emacs.d/
 
