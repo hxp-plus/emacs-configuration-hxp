@@ -39,9 +39,6 @@
   * press `C-c c`
   * journal and todo are located in `~/.emacs.d/doc/org`
 
-# How to use
-
-* Backup your own ~/.emacs.d/
+# How to use* Backup your own ~/.emacs.d/
 * Put all of the files here to ~/.emacs.d/
-
 
