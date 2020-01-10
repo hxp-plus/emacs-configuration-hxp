@@ -20,7 +20,7 @@
   * Usage
     * `M-x markdown-preview-like-god`
 	* `M-x httpd-start`
-	* Visit [localhost:8080/imp](localhost:8080/imp) in your browser
+	* Visit [localhost:8080/imp](http://localhost:8080/imp) in your browser
 	
 ### Python
 * Edit and Debug with [elpy](https://github.com/jorgenschaefer/elpy)
