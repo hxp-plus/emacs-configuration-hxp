@@ -41,7 +41,8 @@
   * `s` to stage file
   * `u` to unstage
   * `c c` to commit
-
+  * `P` to push
+  * `F` to pull
 ### Journal and Todo with org-mode
   * press `C-c c`
   * journal and todo are located in `~/.emacs.d/doc/org`
