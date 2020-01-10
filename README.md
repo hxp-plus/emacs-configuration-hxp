@@ -23,10 +23,17 @@
 	* Visit [localhost:8080/imp](localhost:8080/imp) in your browser
 	
 ### Python
-* elpy
+* Edit and Debug with [elpy](https://github.com/jorgenschaefer/elpy)
 * Syntax checking with flycheck
   * flake8 is required:`sudo pip install flake8`
 * autopep8
+
+### Git support with Magit
+* [Magit Manual](https://www.emacswiki.org/emacs/Magit)
+* `M-x magit-status` to open the git window
+  * `s` to stage file
+  * `u` to unstage
+  * `c c` to commit
 
 ### Journal and Todo with org-mode
   * press `C-c c`
