@@ -85,7 +85,7 @@
   (impatient-mode 1)
   (setq imp-user-filter #'markdown-html)
   (cl-incf imp-last-state)
-  (imp--notify-clients))
+  (httpd-start))
 
 ;; Enable elpy whenever python file is loaded 
 (add-hook 'python-mode-hook(

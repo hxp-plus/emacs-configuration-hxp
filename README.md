@@ -19,8 +19,7 @@
   * preview-lively with impatient mode
   * Usage
     * `M-x markdown-preview-like-god`
-	* `M-x httpd-start`
-	* Visit [localhost:8080/imp](http://localhost:8080/imp) in your browser
+	* Visit [Localhost:8080/imp](http://localhost:8080/imp) in your browser
 	
 
 ### Python
