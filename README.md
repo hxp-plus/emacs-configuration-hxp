@@ -28,6 +28,13 @@
 * Syntax checking with flycheck
   * flake8 is required:`sudo pip install flake8`
 * autopep8
+* [anaconda-mode](https://github.com/pythonic-emacs/anaconda-mode)
+
+
+### Django
+* [python-django](https://github.com/fgallina/python-django.el)
+* [web-mode](https://github.com/fxbois/web-mode)
+* [django-mode](https://github.com/myfreeweb/django-mode)
 
 ### Git support with Magit
 * [Magit Manual](https://www.emacswiki.org/emacs/Magit)
