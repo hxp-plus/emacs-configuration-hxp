@@ -16,9 +16,10 @@
   * auto-completion
   
 ### Markdown
-  * preview-lively with impatient mode
+  * preview-lively with [strapdown.js](http://strapdownjs.com/)
+	* Files are saved offline, no internet connection is required
   * Usage
-    * `C-c p` to preview in FireFox
+      * `C-c p` to preview in FireFox
 	
 
 ### Python
