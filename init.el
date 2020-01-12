@@ -85,7 +85,16 @@
   (impatient-mode 1)
   (setq imp-user-filter #'markdown-html)
   (cl-incf imp-last-state)
-  (httpd-start))
+  (httpd-start)
+  (require 'browse-url)
+  (setq browse-url-browser-function 'browse-url-firefox)
+  (browse-url "http://localhost:8080/imp/")
+  )
+
+;; Use C-c to preview
+(add-hook 'markdown-mode-hook
+	  (lambda ()
+	    (local-set-key (kbd "C-c p") 'markdown-preview-like-god)))
 
 ;; Enable elpy whenever python file is loaded 
 (add-hook 'python-mode-hook(

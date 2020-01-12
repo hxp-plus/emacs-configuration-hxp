@@ -6,3 +6,7 @@ hunspell
 Xiping
 emacs
 elpy
+endif
+endfor
+href
+tagsinput

@@ -18,8 +18,7 @@
 ### Markdown
   * preview-lively with impatient mode
   * Usage
-    * `M-x markdown-preview-like-god`
-	* Visit [Localhost:8080/imp](http://localhost:8080/imp) in your browser
+    * `C-c p` to preview in FireFox
 	
 
 ### Python
