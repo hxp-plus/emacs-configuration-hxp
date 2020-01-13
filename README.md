@@ -71,7 +71,7 @@
   * `F` to pull
 * [A quick guide of Magit](https://www.emacswiki.org/emacs/Magit)
 
-	
+
 ### LaTeX ###
 
 #### AUCTeX: Basic support for LaTeX ####
@@ -112,8 +112,5 @@
 ### Journal and Todo with org-mode ###
   * press `C-c c`
   * journal and todo are located in `.emacs.d/doc/org`
-
-
-
 
 
