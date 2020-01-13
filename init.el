@@ -154,5 +154,3 @@
     (load-theme 'whiteboard)))
 (load-theme 'dracula t)
 
-;; Set font
-(set-frame-font "hack" nil t)
