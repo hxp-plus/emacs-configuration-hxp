@@ -60,9 +60,33 @@
 ;; correlate for LaTeX
 (setq TeX-source-correlate-mode t)
 
-;; Use pdf-tools to open PDF files
-(setq TeX-view-program-selection '((output-pdf "PDF Tools"))
- 	TeX-source-correlate-start-server t)
+;; Set TeX view program
+(cond
+ ((string-equal system-type "windows-nt") ; Microsoft Windows
+  (progn
+    (setq TeX-view-program-list '(("SumatraPDF" "\"C:/Program Files (x86)/SumatraPDF/SumatraPDF.exe\" -reuse-instance %o"))
+	  TeX-source-correlate-start-server t)))
+ ((string-equal system-type "darwin") ; Mac OS X
+  (progn
+    (message "not supported in Mac OS X")))
+ ((string-equal system-type "gnu/linux") ; linux
+  (progn
+    (setq TeX-view-program-selection '((output-pdf "PDF Tools"))
+	  TeX-source-correlate-start-server t))))
+
+;; Open PDF files
+(cond
+ ((string-equal system-type "windows-nt") ; Microsoft Windows
+  (progn
+    (setq TeX-view-program-selection '((output-pdf "SumatraPDF")))))
+ ((string-equal system-type "darwin") ; Mac OS X
+  (progn
+    (message "not supported in Mac OS X")))
+ ((string-equal system-type "gnu/linux") ; linux
+  (progn
+    (setq TeX-view-program-selection '((output-pdf "PDF Tools"))
+      TeX-source-correlate-start-server t))))
+
 
 ;; Update PDF buffers after successful LaTeX runs
 (add-hook 'TeX-after-compilation-finished-functions
