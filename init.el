@@ -40,8 +40,19 @@
 (setq TeX-parse-self t)
 (setq-default TeX-engine 'xetex)
     
-;; Load pdf-tools to view LaTeX
-(pdf-tools-install)
+;; Load pdf-tools to view LaTeX (Linux only)
+;; check OS type
+(cond
+ ((string-equal system-type "windows-nt") ; Microsoft Windows
+  (progn
+    (message "pdf-tools is not supported in Microsoft Windows")))
+ ((string-equal system-type "darwin") ; Mac OS X
+  (progn
+    (message "pdf-tools is not supported in Mac OS X")))
+ ((string-equal system-type "gnu/linux") ; linux
+  (progn
+    (pdf-tools-install))))
+
 
 ;; correlate for LaTeX
 (setq TeX-source-correlate-mode t)
