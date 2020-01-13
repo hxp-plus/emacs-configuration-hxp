@@ -102,7 +102,18 @@
 (add-hook 'prog-mode-hook 'auto-complete-mode)
 
 ;; Spell Check
-(setq-default ispell-program-name "hunspell")
+
+(cond
+ ((string-equal system-type "windows-nt") ; Microsoft Windows
+  (progn
+    (setq-default ispell-program-name "C:/msys64/mingw64/bin/hunspell.exe")))
+ ((string-equal system-type "darwin") ; Mac OS X
+  (progn
+    (message "not supported in Mac OS X")))
+ ((string-equal system-type "gnu/linux") ; linux
+  (progn
+    (setq-default ispell-program-name "hunspell"))))
+
 (setq ispell-local-dictionary "en_US") 
 (setq ispell-local-dictionary-alist
       '(("en_US" "[[:alpha:]]" "[^[:alpha:]]" "[']" nil ("-d" "en_US") nil utf-8)))
@@ -145,6 +156,9 @@
          "* TODO %?\n %i\n %a")
         ("j" "Journal" entry (file+datetree "~/.emacs.d/doc/org/journal.org")
          "* %?\nEntered on %U\n %i\n %a")))
+
+;; Magit
+(global-set-key (kbd "C-x g") 'magit-status)
 
 ;; Load theme
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")

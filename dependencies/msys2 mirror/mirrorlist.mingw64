@@ -1,0 +1,5 @@
+##
+## 64-bit Mingw-w64 repository mirrorlist
+## Changed on 2014-11-15
+##
+Server = https://mirrors.tuna.tsinghua.edu.cn/msys2/mingw/x86_64

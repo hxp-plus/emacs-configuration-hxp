@@ -1,0 +1,5 @@
+##
+## MSYS2 repository mirrorlist
+##
+
+Server = https://mirrors.tuna.tsinghua.edu.cn/msys2/msys/$arch
