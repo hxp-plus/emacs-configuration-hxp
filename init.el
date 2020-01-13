@@ -75,27 +75,8 @@
 (setq package-check-signature nil)
 
 ;; markdown-live-preview
-(defun markdown-html (buffer)
-  (princ (with-current-buffer buffer
-    (format "<!DOCTYPE html><html><title>Markdown Preview by hxp</title><xmp theme=\"simplex\" style=\"display:none;\"> %s  </xmp><script src=\"/strapdown.js\"></script></html>" (buffer-substring-no-properties (point-min) (point-max))))
-  (current-buffer)))
-
-(defun markdown-preview-like-god ()
-  (interactive)
-  (impatient-mode 1)
-  (setq imp-user-filter #'markdown-html)
-  (cl-incf imp-last-state)
-  (setq httpd-root "~/.emacs.d/httpd")
-  (httpd-start)
-  (require 'browse-url)
-  (setq browse-url-browser-function 'browse-url-firefox)
-  (browse-url "http://localhost:8080/imp/")
-  )
-
-;; Use C-c to preview
-(add-hook 'markdown-mode-hook
-	  (lambda ()
-	    (local-set-key (kbd "C-c p") 'markdown-preview-like-god)))
+(add-to-list 'load-path "~/.emacs.d/lisp/")
+(require 'markdown-preview-by-hxp)
 
 ;; Enable elpy whenever python file is loaded 
 (add-hook 'python-mode-hook(

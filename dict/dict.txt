@@ -10,3 +10,7 @@ endif
 endfor
 href
 tagsinput
+hxp
+hust
+odu
+cn

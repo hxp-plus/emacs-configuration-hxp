@@ -16,7 +16,7 @@
   * auto-completion
   
 ### Markdown
-  * preview-lively with [strapdown.js](http://strapdownjs.com/)
+  * preview-lively with [strapdown.js](http://strapdownjs.com/) and [markdown-preview-by-hxp](https://github.com/XipingHu/markdown-preview-by-hxp.git)
 	* Files are saved offline, no internet connection is required
   * Usage
       * `C-c p` to preview in FireFox
