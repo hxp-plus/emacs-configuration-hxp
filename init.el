@@ -147,6 +147,9 @@
         ("j" "Journal" entry (file+datetree "~/.emacs.d/doc/org/journal.org")
          "* %?\nEntered on %U\n %i\n %a")))
 
+;; Magit
+(global-set-key (kbd "C-x g") 'magit-status)
+
 ;; Load theme
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
 (add-hook 'LaTeX-mode-hook
