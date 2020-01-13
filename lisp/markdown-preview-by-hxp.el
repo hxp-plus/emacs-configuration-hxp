@@ -1,5 +1,5 @@
 ;; markdown-preview.el
-;; author: hxp <hxp@hust.odu.cn>
+;; author: hxp <hxp@hust.edu.cn>
 ;; version: 0.0.0
 
 ;; Install
@@ -17,10 +17,24 @@
     (format "<!DOCTYPE html><html><title>Markdown Preview by hxp</title><xmp theme=\"simplex\" style=\"display:none;\"> %s  </xmp><script src=\"/strapdown.js\"></script></html>" (buffer-substring-no-properties (point-min) (point-max))))
 	 (current-buffer)))
 
+(defun async-shell-command-no-window
+    (command)
+  (interactive)
+  (let
+      ((display-buffer-alist
+        (list
+         (cons
+          "\\*Async Shell Command\\*.*"
+          (cons #'display-buffer-no-window nil)))))
+    (async-shell-command
+     command)))
 
-(defun browse-url-edge (url &optional new-window)
-      (shell-command
-       (concat "start microsoft-edge:" url)))
+(defun browse-url-windows (url &optional new-window)
+      (async-shell-command-no-window
+       (concat "\"C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe \" --new-window " url)))
+(defun browse-url-linux (url &optional new-window)
+      (async-shell-command-no-window
+       (concat "google-chrome-stable --new-window " url)))
 
 
 (defun markdown-preview-like-god ()
@@ -35,13 +49,13 @@
   (cond
    ((string-equal system-type "windows-nt") ; Microsoft Windows
     (progn
-      (setq browse-url-browser-function 'browse-url-edge)))
+      (setq browse-url-browser-function 'browse-url-windows)))
    ((string-equal system-type "darwin") ; Mac OS X
     (progn
       (message "Mac OS X")))
    ((string-equal system-type "gnu/linux") ; linux
     (progn
-      (setq browse-url-browser-function 'browse-url-firefox))))
+      (setq browse-url-browser-function 'browse-url-linux))))
   (browse-url "http://localhost:8080/imp/")
   )
 

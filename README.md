@@ -50,6 +50,15 @@
 * Add Environment Variable `c:/Program Files/SumatraPDF` to `PATH`
   * [How to add Path on Windows 10](https://www.wikihow.tech/Add-Path-on-Windows)
 
+### Install Chrome ###
+
+#### Linux ####
+* Make sure your command for chrome is `google-chrome-stable`
+
+#### Windows 10 ####
+* Make sure your chrome is installed in the default directory `C:/Program Files(x86)`
+
+
 ## Features ##
 
 ### Spell Checking ###
