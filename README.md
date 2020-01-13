@@ -61,6 +61,11 @@
 
 ## Features ##
 
+### cnfonts ###
+* Chinese Font and English Font manager
+* Run `M-x cnfonts-edit-profile` to configure different font for Chinese and English.
+
+
 ### Spell Checking ###
 
 * Spell checking is performed as you are typing.
