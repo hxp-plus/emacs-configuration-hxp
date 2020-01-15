@@ -1,0 +1,68 @@
+# -*- mode: snippet -*-
+# name: beamer
+# key: beamer
+# --
+
+\documentclass[UTF8]{beamer}
+\usepackage{ctex}               
+\usepackage{amstext}             
+\usepackage{amsthm}               
+\usefonttheme{professionalfonts}  
+\usepackage{indentfirst}         
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{xcolor}
+\usepackage{subfigure}
+\usepackage[english]{babel}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{tikz}
+\setlength{\parindent}{2em}      %首行缩进2字符
+\setbeamertemplate{theorems}[numbered]
+\setbeamertemplate{caption}[numbered]
+
+%下面是定理，定义，引言的声明，可自行添加
+\newtheorem{thm}{Theorem}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{defi}[thm]{Definition}
+\newtheorem{remark}[thm]{Remark}
+\newtheorem{claim}[thm]{Claim}
+\newenvironment{proofnoqed}{\begin{proof}<span style="background-color: rgb(255, 0, 0);">\renewcommand{\qedsymbol}{}  }{\end{proof} }
+%有的证明比较长，前面的应该没有证毕符号，只在最后一个用proof，其他应该用自定义的新环境proofnoqed
+%  三种颜色   red  purple   magenta加
+%******************************************************************************************
+%下面是beamer的主题设置，目录框架结构，其实就是标题，目录等在上下左右哪一个位置放置，以及目录怎么显示
+\usetheme{CambridgeUS}            % 幻灯片模板选择singapore
+\usebeamercolor{beaver}           % 幻灯片模板的色彩sidebartab
+\AtBeginSection[]{               
+\begin{frame}
+\frametitle{Outline}
+\tableofcontents[sectionstyle=show/shaded,subsectionstyle=show/show/shaded]
+\end{frame} 
+}
+%  在每个章节前都会显示一个frame。
+%*******************************************************************************************
+%       标题页的内容设置，根据实际情况修改即可
+\title{$1}  % 幻灯片封面
+\author{Xiping Hu}
+\institute{}
+\date{\today}%一般是\today
+%*******************************************************************************************
+\begin{document}
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}              
+\frametitle{Outline}
+\tableofcontents[sectionstyle=show/show,subsectionstyle=show/show/hide]
+\end{frame}
+
+\begin{frame}
+$2
+\end{frame}
+
+\end{document}
