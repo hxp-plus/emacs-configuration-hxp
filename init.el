@@ -1,7 +1,12 @@
 ;; MELPA
 (require 'package)
-(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
-(add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/"))
+
+;; Use the tuna mirror
+(setq package-archives '(("gnu"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
+                         ("melpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
+			 ("melpa stable" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa-stable/")
+			 ("marmalade" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/marmalade/")
+			 ("org" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/org/")))
 (package-initialize)
 
 (custom-set-variables
@@ -15,14 +20,9 @@
  '(inhibit-startup-screen t)
  '(ispell-personal-dictionary "~/.emacs.d/dict/dict.txt")
  '(latex-block-names nil)
- '(package-archives
-   (quote
-    (("melpa-stable" . "https://stable.melpa.org/packages/")
-     ("melpa" . "https://melpa.org/packages/")
-     ("gnu" . "http://elpa.gnu.org/packages/"))))
  '(package-selected-packages
    (quote
-    (cnfonts web-mode anaconda-mode magit py-autopep8 flycheck elpygen org-link-minor-mode impatient-mode flymd gnu-elpa-keyring-update dracula-theme list-packages-ext elpy python-django django-mode markdown-mode yasnippet-snippets pdf-tools ac-math company-math auto-complete-auctex constant-theme cdlatex)))
+    (auctex xref-js2 js2-refactor js2-mode cnfonts web-mode anaconda-mode magit py-autopep8 flycheck elpygen org-link-minor-mode impatient-mode flymd gnu-elpa-keyring-update dracula-theme list-packages-ext elpy python-django django-mode markdown-mode yasnippet-snippets pdf-tools ac-math company-math auto-complete-auctex constant-theme cdlatex)))
  '(preview-gs-options
    (quote
     ("-q" "-dNOPAUSE" "-DNOPLATFONTS" "-dPrinted" "-dTextAlphaBits=4" "-dGraphicsAlphaBits=4" "-dNOSAFER")))
