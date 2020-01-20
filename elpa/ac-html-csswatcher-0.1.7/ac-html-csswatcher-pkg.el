@@ -1,0 +1,2 @@
+;;; -*- no-byte-compile: t -*-
+(define-package "ac-html-csswatcher" "0.1.7" "css/less class/id completion with `ac-html' or `company-web'" '((web-completion-data "0.1")) :commit "dadc3c595cf1708291096c03987f1981f3cabc6b" :keywords '("html" "css" "less" "auto-complete") :authors '(("Olexandr Sydorchuck " . "olexandr.syd@gmail.com")) :maintainer '("Olexandr Sydorchuck " . "olexandr.syd@gmail.com") :url "https://github.com/osv/ac-html-csswatcher")

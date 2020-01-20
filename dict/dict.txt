@@ -16,3 +16,4 @@ odu
 cn
 pdf
 pre
+localhost

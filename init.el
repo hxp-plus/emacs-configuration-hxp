@@ -22,7 +22,7 @@
  '(latex-block-names nil)
  '(package-selected-packages
    (quote
-    (auctex xref-js2 js2-refactor js2-mode cnfonts web-mode anaconda-mode magit py-autopep8 flycheck elpygen org-link-minor-mode impatient-mode flymd gnu-elpa-keyring-update dracula-theme list-packages-ext elpy python-django django-mode markdown-mode yasnippet-snippets pdf-tools ac-math company-math auto-complete-auctex constant-theme cdlatex)))
+    (neotree ac-python ac-html-csswatcher ac-html-bootstrap ac-html-angular ac-html ac-ispell ac-octave matlab-mode jedi ein auctex xref-js2 js2-refactor js2-mode cnfonts web-mode anaconda-mode magit py-autopep8 flycheck elpygen org-link-minor-mode impatient-mode flymd gnu-elpa-keyring-update dracula-theme list-packages-ext elpy python-django django-mode markdown-mode yasnippet-snippets pdf-tools ac-math company-math auto-complete-auctex constant-theme cdlatex)))
  '(preview-gs-options
    (quote
     ("-q" "-dNOPAUSE" "-DNOPLATFONTS" "-dPrinted" "-dTextAlphaBits=4" "-dGraphicsAlphaBits=4" "-dNOSAFER")))
