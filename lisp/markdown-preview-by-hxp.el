@@ -11,11 +11,12 @@
 
 (provide 'markdown-preview-by-hxp)
 
-
 (defun markdown-html (buffer)
   (princ (with-current-buffer buffer
     (format "<!DOCTYPE html><html><title>Markdown Preview by hxp</title><xmp theme=\"simplex\" style=\"display:none;\"> %s  </xmp><script src=\"/strapdown.js\"></script></html>" (buffer-substring-no-properties (point-min) (point-max))))
 	 (current-buffer)))
+
+
 
 (defun async-shell-command-no-window
     (command)

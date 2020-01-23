@@ -5,7 +5,6 @@
 ### Install Emacs Configuration File ###
 
 #### Linux ####
-
 * Backup your own ~/.emacs.d/
 * Put all of the files here to ~/.emacs.d/
 
@@ -65,6 +64,10 @@
 * Chinese Font and English Font manager
 * Run `M-x cnfonts-edit-profile` to configure different font for Chinese and English.
 
+### Auto save ###
+
+* I configured auto-save just because I'm a bit too lazy to press `C-c C-s`
+* The auto-save Interval is set to 1 second.
 
 ### Spell Checking ###
 
@@ -107,7 +110,8 @@
 	* Files are saved offline, no internet connection is required
   * Usage
       * `C-c p` to preview in Firefox (Linux) or Microsoft Edge (Windows 10)
-	
+  * **Updated on Jan 23 2020**
+    * Hit `C-c C-c l` to preview in eww
 
 ### Python ###
 * Edit and Debug with [elpy](https://github.com/jorgenschaefer/elpy)
@@ -126,5 +130,3 @@
 ### Journal and Todo with org-mode ###
   * press `C-c c`
   * journal and todo are located in `.emacs.d/doc/org`
-
-

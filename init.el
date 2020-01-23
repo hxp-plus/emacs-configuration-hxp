@@ -22,7 +22,7 @@
  '(latex-block-names nil)
  '(package-selected-packages
    (quote
-    (neotree ac-python ac-html-csswatcher ac-html-bootstrap ac-html-angular ac-html ac-ispell ac-octave matlab-mode jedi ein auctex xref-js2 js2-refactor js2-mode cnfonts web-mode anaconda-mode magit py-autopep8 flycheck elpygen org-link-minor-mode impatient-mode flymd gnu-elpa-keyring-update dracula-theme list-packages-ext elpy python-django django-mode markdown-mode yasnippet-snippets pdf-tools ac-math company-math auto-complete-auctex constant-theme cdlatex)))
+    (real-auto-save markdown-preview-eww neotree ac-python ac-html-csswatcher ac-html-bootstrap ac-html-angular ac-html ac-ispell ac-octave matlab-mode jedi ein auctex xref-js2 js2-refactor js2-mode cnfonts web-mode anaconda-mode magit py-autopep8 flycheck elpygen org-link-minor-mode impatient-mode flymd gnu-elpa-keyring-update dracula-theme list-packages-ext elpy python-django django-mode markdown-mode yasnippet-snippets pdf-tools ac-math company-math auto-complete-auctex constant-theme cdlatex)))
  '(preview-gs-options
    (quote
     ("-q" "-dNOPAUSE" "-DNOPLATFONTS" "-dPrinted" "-dTextAlphaBits=4" "-dGraphicsAlphaBits=4" "-dNOSAFER")))
@@ -37,6 +37,11 @@
 
 ;; Chinese Support
 (cnfonts-enable)
+
+;; Auto save on buffer changes
+(add-hook 'prog-mode-hook 'real-auto-save-mode)
+(add-hook 'text-mode-hook 'real-auto-save-mode)
+(setq real-auto-save-interval 1)
 
 ;; LaTeX
 (setq TeX-auto-save t)
