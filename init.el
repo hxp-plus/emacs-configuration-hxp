@@ -1,4 +1,3 @@
-;; MELPA
 (require 'package)
 
 ;; Use the tuna mirror
@@ -15,17 +14,14 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
-   (quote
-    ("d75b09e9a0760034d871fde1ef96b55826d63dafef577d14a01b690764c851e9" "274fa62b00d732d093fc3f120aca1b31a6bb484492f31081c1814a858e25c72e" "ba913d12adb68e9dadf1f43e6afa8e46c4822bb96a289d5bf1204344064f041e" default)))
+   '("d75b09e9a0760034d871fde1ef96b55826d63dafef577d14a01b690764c851e9" "274fa62b00d732d093fc3f120aca1b31a6bb484492f31081c1814a858e25c72e" "ba913d12adb68e9dadf1f43e6afa8e46c4822bb96a289d5bf1204344064f041e" default))
  '(inhibit-startup-screen t)
  '(ispell-personal-dictionary "~/.emacs.d/dict/dict.txt")
  '(latex-block-names nil)
  '(package-selected-packages
-   (quote
-    (real-auto-save markdown-preview-eww neotree ac-python ac-html-csswatcher ac-html-bootstrap ac-html-angular ac-html ac-ispell ac-octave matlab-mode jedi ein auctex xref-js2 js2-refactor js2-mode cnfonts web-mode anaconda-mode magit py-autopep8 flycheck elpygen org-link-minor-mode impatient-mode flymd gnu-elpa-keyring-update dracula-theme list-packages-ext elpy python-django django-mode markdown-mode yasnippet-snippets pdf-tools ac-math company-math auto-complete-auctex constant-theme cdlatex)))
+   '(nasm-mode real-auto-save markdown-preview-eww neotree ac-python ac-html-csswatcher ac-html-bootstrap ac-html-angular ac-html ac-ispell ac-octave matlab-mode jedi ein auctex xref-js2 js2-refactor js2-mode cnfonts web-mode anaconda-mode magit py-autopep8 flycheck elpygen org-link-minor-mode impatient-mode flymd gnu-elpa-keyring-update dracula-theme list-packages-ext elpy python-django django-mode markdown-mode yasnippet-snippets pdf-tools ac-math company-math auto-complete-auctex constant-theme cdlatex))
  '(preview-gs-options
-   (quote
-    ("-q" "-dNOPAUSE" "-DNOPLATFONTS" "-dPrinted" "-dTextAlphaBits=4" "-dGraphicsAlphaBits=4" "-dNOSAFER")))
+   '("-q" "-dNOPAUSE" "-DNOPLATFONTS" "-dPrinted" "-dTextAlphaBits=4" "-dGraphicsAlphaBits=4" "-dNOSAFER"))
  '(tool-bar-mode nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -41,7 +37,7 @@
 ;; Auto save on buffer changes
 (add-hook 'prog-mode-hook 'real-auto-save-mode)
 (add-hook 'text-mode-hook 'real-auto-save-mode)
-(setq real-auto-save-interval 1)
+(setq real-auto-save-interval 0.01)  ;; You need to use hxp version of emacs to get rid of the saving message
 
 ;; LaTeX
 (setq TeX-auto-save t)
@@ -130,6 +126,7 @@
 ;; markdown-live-preview
 (add-to-list 'load-path "~/.emacs.d/lisp/")
 (require 'markdown-preview-by-hxp)
+(require 'turn-off-messaging)
 
 ;; Enable elpy whenever python file is loaded 
 (add-hook 'python-mode-hook(
@@ -161,6 +158,9 @@
          "* TODO %?\n %i\n %a")
         ("j" "Journal" entry (file+datetree "~/.emacs.d/doc/org/journal.org")
          "* %?\nEntered on %U\n %i\n %a")))
+;; NASM-mode
+(add-hook 'asm-mode-hook 'nasm-mode)
+
 
 ;; Magit
 (global-set-key (kbd "C-x g") 'magit-status)
