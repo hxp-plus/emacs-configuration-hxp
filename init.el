@@ -179,11 +179,6 @@
               'comint-previous-input)
             (define-key inferior-octave-mode-map [down]
               'comint-next-input)))
-;; gnuserv
-(autoload 'octave-help "octave-hlp" nil t)
-(require 'gnuserv)
-(gnuserv-start)
-
 
 ;; Magit
 (global-set-key (kbd "C-x g") 'magit-status)
