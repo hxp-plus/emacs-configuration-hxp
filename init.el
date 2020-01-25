@@ -172,6 +172,18 @@
             (auto-fill-mode 1)
             (if (eq window-system 'x)
                 (font-lock-mode 1))))
+(add-hook 'inferior-octave-mode-hook
+          (lambda ()
+            (turn-on-font-lock)
+            (define-key inferior-octave-mode-map [up]
+              'comint-previous-input)
+            (define-key inferior-octave-mode-map [down]
+              'comint-next-input)))
+;; gnuserv
+(autoload 'octave-help "octave-hlp" nil t)
+(require 'gnuserv)
+(gnuserv-start)
+
 
 ;; Magit
 (global-set-key (kbd "C-x g") 'magit-status)
