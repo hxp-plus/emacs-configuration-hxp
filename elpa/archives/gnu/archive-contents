@@ -2160,14 +2160,6 @@
        ((:url . "https://github.com/m00natic/vlfi")
 	(:maintainer "Andrey Kotlarski" . "m00naticus@gmail.com")
 	(:keywords "large files" "utilities"))])
- (w3 .
-     [(4 0 49)
-      nil "Fully customizable, largely undocumented web browser for Emacs" tar
-      ((:maintainer "William Perry and many more")
-       (:authors
-	("William Perry and many more"))
-       (:keywords "faces" "help" "comm" "news" "mail" "processes" "mouse" "hypermedia")
-       (:url . "http://elpa.gnu.org/packages/w3.html"))])
  (wcheck-mode .
 	      [(2019 6 17)
 	       nil "General interface for text checkers" single
