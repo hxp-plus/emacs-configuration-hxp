@@ -19,7 +19,7 @@
  '(ispell-personal-dictionary "~/.emacs.d/dict/dict.txt")
  '(latex-block-names nil)
  '(package-selected-packages
-   '(smartparens dockerfile-mode nasm-mode real-auto-save markdown-preview-eww neotree ac-python ac-html-csswatcher ac-html-bootstrap ac-html-angular ac-html ac-ispell ac-octave matlab-mode jedi ein auctex xref-js2 js2-refactor js2-mode cnfonts web-mode anaconda-mode magit py-autopep8 flycheck elpygen org-link-minor-mode impatient-mode flymd gnu-elpa-keyring-update dracula-theme list-packages-ext elpy python-django django-mode markdown-mode yasnippet-snippets pdf-tools ac-math company-math auto-complete-auctex constant-theme cdlatex))
+   '(evil smartparens dockerfile-mode nasm-mode real-auto-save markdown-preview-eww neotree ac-python ac-html-csswatcher ac-html-bootstrap ac-html-angular ac-html ac-ispell ac-octave matlab-mode jedi ein auctex xref-js2 js2-refactor js2-mode cnfonts web-mode anaconda-mode magit py-autopep8 flycheck elpygen org-link-minor-mode impatient-mode flymd gnu-elpa-keyring-update dracula-theme list-packages-ext elpy python-django django-mode markdown-mode yasnippet-snippets pdf-tools ac-math company-math auto-complete-auctex constant-theme cdlatex))
  '(preview-gs-options
    '("-q" "-dNOPAUSE" "-DNOPLATFONTS" "-dPrinted" "-dTextAlphaBits=4" "-dGraphicsAlphaBits=4" "-dNOSAFER"))
  '(tool-bar-mode nil))
@@ -186,6 +186,11 @@
 ;; Magit
 (global-set-key (kbd "C-x g") 'magit-status)
 
+;; Python
+(add-hook 'python-mode-hook
+	  (lambda ()
+	    (local-set-key (kbd "C-c C-c") 'python-shell-send-buffer)))
+
 ;; Load theme
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
 (add-hook 'LaTeX-mode-hook
@@ -193,3 +198,14 @@
     (load-theme 'whiteboard)))
 (load-theme 'dracula t)
 
+;; Evil mode
+(evil-mode 1)
+(define-key evil-motion-state-map "h" nil)
+(define-key evil-motion-state-map "j" nil)
+(define-key evil-motion-state-map "k" nil)
+(define-key evil-motion-state-map "l" nil)
+(define-key evil-motion-state-map "h" 'evil-backward-char)
+(define-key evil-motion-state-map "t" 'evil-next-line)
+(define-key evil-motion-state-map "n" 'evil-previous-line)
+(define-key evil-motion-state-map "s" 'evil-forward-char)
+(define-key evil-normal-state-map "s" nil)
