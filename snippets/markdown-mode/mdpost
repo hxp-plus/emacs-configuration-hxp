@@ -1,0 +1,14 @@
+# -*- mode: snippet -*-
+# name: post
+# key: mdpost
+# --
+---
+layout: post
+title: "$1"
+subtitle: '$2'
+author: "hxp"
+header-style: text
+tags:
+  - $3
+---
+$0
