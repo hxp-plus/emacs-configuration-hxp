@@ -1,5 +1,4 @@
 (require 'package)
-
 ;; Use the tuna mirror
 (setq package-archives '(("gnu"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
                          ("melpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
@@ -14,14 +13,17 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
-   '("d75b09e9a0760034d871fde1ef96b55826d63dafef577d14a01b690764c851e9" "274fa62b00d732d093fc3f120aca1b31a6bb484492f31081c1814a858e25c72e" "ba913d12adb68e9dadf1f43e6afa8e46c4822bb96a289d5bf1204344064f041e" default))
+   (quote
+    ("d75b09e9a0760034d871fde1ef96b55826d63dafef577d14a01b690764c851e9" "274fa62b00d732d093fc3f120aca1b31a6bb484492f31081c1814a858e25c72e" "ba913d12adb68e9dadf1f43e6afa8e46c4822bb96a289d5bf1204344064f041e" default)))
  '(inhibit-startup-screen t)
  '(ispell-personal-dictionary "~/.emacs.d/dict/dict.txt")
  '(latex-block-names nil)
  '(package-selected-packages
-   '(exec-path-from-shell go-autocomplete go-mode evil smartparens dockerfile-mode nasm-mode real-auto-save markdown-preview-eww neotree ac-python ac-html-csswatcher ac-html-bootstrap ac-html-angular ac-html ac-ispell ac-octave matlab-mode jedi ein auctex xref-js2 js2-refactor js2-mode cnfonts web-mode anaconda-mode magit py-autopep8 flycheck elpygen org-link-minor-mode impatient-mode flymd gnu-elpa-keyring-update dracula-theme list-packages-ext elpy python-django django-mode markdown-mode yasnippet-snippets pdf-tools ac-math company-math auto-complete-auctex constant-theme cdlatex))
+   (quote
+    (helm-projectile flycheck-rtags company-rtags helm-rtags rtags irony-eldoc flycheck-irony company-irony-c-headers company-irony company-c-headers exec-path-from-shell go-autocomplete go-mode evil smartparens dockerfile-mode nasm-mode markdown-preview-eww neotree ac-python ac-html-csswatcher ac-html-bootstrap ac-html-angular ac-html ac-ispell ac-octave matlab-mode jedi ein auctex xref-js2 js2-refactor js2-mode cnfonts web-mode anaconda-mode magit py-autopep8 flycheck elpygen org-link-minor-mode impatient-mode flymd gnu-elpa-keyring-update dracula-theme list-packages-ext elpy python-django django-mode markdown-mode yasnippet-snippets pdf-tools ac-math company-math auto-complete-auctex constant-theme cdlatex)))
  '(preview-gs-options
-   '("-q" "-dNOPAUSE" "-DNOPLATFONTS" "-dPrinted" "-dTextAlphaBits=4" "-dGraphicsAlphaBits=4" "-dNOSAFER"))
+   (quote
+    ("-q" "-dNOPAUSE" "-DNOPLATFONTS" "-dPrinted" "-dTextAlphaBits=4" "-dGraphicsAlphaBits=4" "-dNOSAFER")))
  '(tool-bar-mode nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -36,11 +38,6 @@
 
 ;; Smart parens
 (smartparens-global-mode)
-
-;; Auto save on buffer changes
-(add-hook 'prog-mode-hook 'real-auto-save-mode)
-(add-hook 'text-mode-hook 'real-auto-save-mode)
-(setq real-auto-save-interval 0.01)  ;; You need to use hxp version of emacs to get rid of the saving message
 
 ;; LaTeX
 (setq TeX-auto-save t)
@@ -209,5 +206,173 @@
 (define-key evil-motion-state-map "s" 'evil-forward-char)
 (define-key evil-normal-state-map "s" nil)
 
+(require 'req-package)
+(req-package company
+  :config
+  (progn
+    (add-hook 'after-init-hook 'global-company-mode)
+    (global-set-key (kbd "M-/") 'company-complete-common-or-cycle)
+    (setq company-idle-delay 0)))
+
+(req-package flycheck
+  :config
+  (progn
+    (global-flycheck-mode)))
+
+(req-package irony
+  :config
+  (progn
+    ;; If irony server was never installed, install it.
+    (unless (irony--find-server-executable) (call-interactively #'irony-install-server))
+
+    (add-hook 'c++-mode-hook 'irony-mode)
+    (add-hook 'c-mode-hook 'irony-mode)
+
+    ;; Use compilation database first, clang_complete as fallback.
+    (setq-default irony-cdb-compilation-databases '(irony-cdb-libclang
+                                                      irony-cdb-clang-complete))
+
+    (add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)
+  ))
+
+  ;; I use irony with company to get code completion.
+  (req-package company-irony
+    :require company irony
+    :config
+    (progn
+      (eval-after-load 'company '(add-to-list 'company-backends 'company-irony))))
+
+  ;; I use irony with flycheck to get real-time syntax checking.
+  (req-package flycheck-irony
+    :require flycheck irony
+    :config
+    (progn
+      (eval-after-load 'flycheck '(add-hook 'flycheck-mode-hook #'flycheck-irony-setup))))
+
+  ;; Eldoc shows argument list of the function you are currently writing in the echo area.
+  (req-package irony-eldoc
+    :require eldoc irony
+    :config
+    (progn
+      (add-hook 'irony-mode-hook #'irony-eldoc)))
+
+
+(req-package rtags
+  :config
+  (progn
+    (unless (rtags-executable-find "rc") (error "Binary rc is not installed!"))
+    (unless (rtags-executable-find "rdm") (error "Binary rdm is not installed!"))
+
+    (define-key c-mode-base-map (kbd "M-.") 'rtags-find-symbol-at-point)
+    (define-key c-mode-base-map (kbd "M-,") 'rtags-find-references-at-point)
+    (define-key c-mode-base-map (kbd "M-?") 'rtags-display-summary)
+    (rtags-enable-standard-keybindings)
+
+    (setq rtags-use-helm t)
+
+    ;; Shutdown rdm when leaving emacs.
+    (add-hook 'kill-emacs-hook 'rtags-quit-rdm)
+    ))
+
+;; TODO: Has no coloring! How can I get coloring?
+(req-package helm-rtags
+  :require helm rtags
+  :config
+  (progn
+    (setq rtags-display-result-backend 'helm)
+    ))
+
+;; Use rtags for auto-completion.
+(req-package company-rtags
+  :require company rtags
+  :config
+  (progn
+    (setq rtags-autostart-diagnostics t)
+    (rtags-diagnostics)
+    (setq rtags-completions-enabled t)
+    (push 'company-rtags company-backends)
+    ))
+
+;; Live code checking.
+(req-package flycheck-rtags
+  :require flycheck rtags
+  :config
+  (progn
+    ;; ensure that we use only rtags checking
+    ;; https://github.com/Andersbakken/rtags#optional-1
+    (defun setup-flycheck-rtags ()
+      (flycheck-select-checker 'rtags)
+      (setq-local flycheck-highlighting-mode nil) ;; RTags creates more accurate overlays.
+      (setq-local flycheck-check-syntax-automatically nil)
+      (rtags-set-periodic-reparse-timeout 2.0)  ;; Run flycheck 2 seconds after being idle.
+      )
+    (add-hook 'c-mode-hook #'setup-flycheck-rtags)
+    (add-hook 'c++-mode-hook #'setup-flycheck-rtags)
+    ))
+
+(req-package projectile
+  :config
+  (progn
+    (projectile-global-mode)
+    ))
+
+;; Helm makes searching for anything nicer.
+;; It works on top of many other commands / packages and gives them nice, flexible UI.
+(req-package helm
+  :config
+  (progn
+    (require 'helm-config)
+
+    ;; Use C-c h instead of default C-x c, it makes more sense.
+    (global-set-key (kbd "C-c h") 'helm-command-prefix)
+    (global-unset-key (kbd "C-x c"))
+
+    (setq
+     ;; move to end or beginning of source when reaching top or bottom of source.
+     helm-move-to-line-cycle-in-source t
+     ;; search for library in `require' and `declare-function' sexp.
+     helm-ff-search-library-in-sexp t
+     ;; scroll 8 lines other window using M-<next>/M-<prior>
+     helm-scroll-amount 8
+     helm-ff-file-name-history-use-recentf t
+     helm-echo-input-in-header-line t)
+
+    (global-set-key (kbd "M-x") 'helm-M-x)
+    (setq helm-M-x-fuzzy-match t) ;; optional fuzzy matching for helm-M-x
+
+    (global-set-key (kbd "C-x C-f") 'helm-find-files)
+
+    (global-set-key (kbd "M-y") 'helm-show-kill-ring)
+
+    (global-set-key (kbd "C-x b") 'helm-mini)
+    (setq helm-buffers-fuzzy-matching t
+          helm-recentf-fuzzy-match t)
+
+    ;; TOOD: helm-semantic has not syntax coloring! How can I fix that?
+    (setq helm-semantic-fuzzy-match t
+          helm-imenu-fuzzy-match t)
+
+    ;; Lists all occurences of a pattern in buffer.
+    (global-set-key (kbd "C-c h o") 'helm-occur)
+
+    (global-set-key (kbd "C-h SPC") 'helm-all-mark-rings)
+
+    ;; open helm buffer inside current window, not occupy whole other window
+    (setq helm-split-window-in-side-p t)
+    (setq helm-autoresize-max-height 50)
+    (setq helm-autoresize-min-height 30)
+    (helm-autoresize-mode 1)
+
+    (helm-mode 1)
+    ))
+
+;; Use Helm in Projectile.
+(req-package helm-projectile
+  :require helm projectile
+  :config
+  (progn
+    (setq projectile-completion-system 'helm)
+    (helm-projectile-on)
+    ))
 
 
