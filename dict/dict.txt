@@ -21,3 +21,12 @@ nginx
 config
 Kirchhoffs
 iostream
+MatlabEngine
+hpp
+MatlabDataArray
+Balmer
+Rydburg
+undoped
+dopant
+Zener
+photodiode

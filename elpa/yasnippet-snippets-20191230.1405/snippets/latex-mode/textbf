@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
 # name: textbf
-# key: b
+# key: bf
 # --
 \textbf{$1}$0
