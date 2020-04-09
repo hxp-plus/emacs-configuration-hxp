@@ -30,3 +30,8 @@ undoped
 dopant
 Zener
 photodiode
+https
+CentOS
+SSL
+uncomment
+MOSFET
