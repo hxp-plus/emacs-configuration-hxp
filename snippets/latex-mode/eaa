@@ -1,0 +1,12 @@
+# -*- mode: snippet -*-
+# name: eaa
+# key: eaa
+# --
+
+\begin{equation*}
+  \left\\{
+    \begin{aligned}
+      $0
+    \end{aligned}
+  \right.
+\end{equation*}

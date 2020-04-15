@@ -32,6 +32,15 @@
 \renewcommand{\mathbf}[1]{\boldsymbol{\Oldmathbf{#1}}}
 \let\eqnarray\align
 
+\renewcommand*{\arraystretch}{2}
+\usepackage{units}
+\renewcommand{\frac}{\nicefrac}
+
+\usepackage{cellspace}
+\setlength{\cellspacetoplimit}{5pt}
+\setlength{\cellspacebottomlimit}{5pt}
+
+
 \author{Xiping Hu}
 \usepackage{authblk}
 \author{Xiping Hu}
