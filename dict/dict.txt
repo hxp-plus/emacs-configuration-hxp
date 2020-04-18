@@ -35,3 +35,8 @@ CentOS
 SSL
 uncomment
 MOSFET
+Brackett
+Paschen
+Pfund
+Bergmann
+wavenumbers
