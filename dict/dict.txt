@@ -40,3 +40,4 @@ Paschen
 Pfund
 Bergmann
 wavenumbers
+Zeeman

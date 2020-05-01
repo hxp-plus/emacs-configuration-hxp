@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: 2quad
+# key: 2q
+# --
+\quad\quad $0

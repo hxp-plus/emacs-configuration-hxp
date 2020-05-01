@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: pa
+# key: pa
+# --
+\parallel $0
