@@ -4,51 +4,64 @@
 # --   
 
 \documentclass{article}
-%Chinese
-%\documentclass[UTF8, nofonts, mathptmx, 12pt, onecolumn]{article}
+
+% Chinese Support using xeCJK
 %\usepackage{xeCJK}
 %\setCJKmainfont{SimSun}
+
+% Chinese Support using CTeX
+% \usepackage{ctex}
+
+% Math Support
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{wasysym}
-%\usepackage{ctex}
+
+% Graphics Support
 \usepackage{graphicx}
 \usepackage{float}
+
+% Reduced page margin
 \usepackage{geometry}
 \geometry{a4paper,scale=0.8}
+
 \usepackage{caption}
 \usepackage{subcaption}
-% \newcommand{\oiint}{\mathop{{\int\!\!\!\!\!\int}\mkern-21mu \bigcirc} {}}
+
+% d and e should be math operators
 \newcommand*{\dif}{\mathop{}\!\mathrm{d}}
 \newcommand*{\md}{\mathop{}\!\mathrm{d}}
 \newcommand*{\me}{\mathrm{e}}
 
+% No indent for each paragraph
 % \usepackage{parskip}
 % \setlength{\parindent}{0cm}
 
+% Bold style for Greek letters
 \usepackage{bm}
 \let\Oldmathbf\mathbf
 \renewcommand{\mathbf}[1]{\boldsymbol{\Oldmathbf{#1}}}
-\let\eqnarray\align
 
-\renewcommand*{\arraystretch}{2}
-\usepackage{units}
-\renewcommand{\frac}{\nicefrac}
-
+% More space for dfrac in cell
 \usepackage{cellspace}
 \setlength{\cellspacetoplimit}{5pt}
 \setlength{\cellspacebottomlimit}{5pt}
 
+% SI units
+\newcommand{\si}[1]{\  \mathrm{#1}}
 
-\author{Xiping Hu}
+% Multi-line author information
 \usepackage{authblk}
 \author{Xiping Hu}
 \affil{https://hxp.plus/}
+
 \title{$1}
 
 \begin{document}
+
 \maketitle
+
 $0
 
 \end{document}
