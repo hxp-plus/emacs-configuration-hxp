@@ -17,6 +17,7 @@
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{wasysym}
+\newcommand{\angstrom}{\text{\normalfont\AA}}
 
 % Graphics Support
 \usepackage{graphicx}
