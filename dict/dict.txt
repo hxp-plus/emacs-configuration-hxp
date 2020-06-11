@@ -45,3 +45,10 @@ wavenumbers
 Zeeman
 Polarizers
 BJT
+xlsx
+docx
+Transconductance
+Transresistance
+htbp
+Schottky
+Schmitt

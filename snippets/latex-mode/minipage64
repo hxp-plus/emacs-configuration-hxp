@@ -1,0 +1,15 @@
+# -*- mode: snippet -*-
+# name: minipage64
+# key: m64
+# --
+\begin{minipage}[htbp]{0.6\linewidth}
+  \includegraphics[width=\linewidth]{figures/$1}
+\end{minipage}
+\begin{minipage}[htbp]{0.4\linewidth}
+  \begin{equation*}
+    \begin{aligned}
+      $2
+    \end{aligned}
+  \end{equation*}
+\end{minipage}
+$0
