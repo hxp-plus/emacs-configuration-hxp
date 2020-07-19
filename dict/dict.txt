@@ -52,3 +52,4 @@ Transresistance
 htbp
 Schottky
 Schmitt
+Poynting
