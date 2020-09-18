@@ -53,3 +53,7 @@ htbp
 Schottky
 Schmitt
 Poynting
+aspherical
+aspheric
+paraboloidal
+SimSun
