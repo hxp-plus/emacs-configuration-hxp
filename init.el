@@ -58,3 +58,4 @@
 ;; ### Set Okular as the default PDF viewer.
 (eval-after-load "tex"
   '(setcar (cdr (assoc 'output-pdf TeX-view-program-selection)) "Okular"))
+
